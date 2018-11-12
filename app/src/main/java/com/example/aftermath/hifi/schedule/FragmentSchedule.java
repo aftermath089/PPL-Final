@@ -32,7 +32,7 @@ public class FragmentSchedule extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         //test data
         for(int i=0;i<10;i++) {
-            ModelSchedule modelSchedule = new ModelSchedule("JOTA THE JETSKI", "INDONESIA", "TENNIS INDOOR SENAYAN", "SELASA, 12 OKTOBER 2099", R.color.colorPrimary);
+            ModelSchedule modelSchedule = new ModelSchedule("JOTA THE JETSKI", "INDONESIA", "TENNIS INDOOR SENAYAN", "SELASA, 12 OKTOBER 2099", R.color.colorPrimary, "about player");
             listModelSchedule.add(modelSchedule);
         }
         //

@@ -1,22 +1,60 @@
 package com.example.aftermath.hifi.schedule;
 
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.aftermath.hifi.R;
 
 public class ActivitySchedule extends AppCompatActivity {
     public static String status="";
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
+    ModelSchedule modelSchedule;
+    ImageView ivAthlete, ivMatchVenue;
+    TextView tvAthleteName, tvAtlheteNation, tvAthleteAbout, tvMatchDate, tvMatchVenue;
+
+    private void getData(){
+        Bundle bundle = getIntent().getExtras();
+        modelSchedule = (ModelSchedule)bundle.getSerializable("scheduleData");
+        setLayoutData();
+    }
+
+    private void setLayoutData(){
+        ivAthlete.setImageResource(modelSchedule.getPicture());
+        ivMatchVenue.setImageResource(modelSchedule.getPicture());
+        tvAthleteName.setText(modelSchedule.getName());
+        tvAtlheteNation.setText(modelSchedule.getNation());
+        tvAthleteAbout.setText(modelSchedule.getAbout());
+        tvMatchDate.setText(modelSchedule.getTime());
+        tvMatchVenue.setText(modelSchedule.getLocation());
+    }
+
+    private void initViews(){
         setContentView(R.layout.activity_schedule);
         Toolbar toolbar = findViewById(R.id.toolbar_schedule);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//buat munculin back button di custom toolbar/appbar
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        ivAthlete = findViewById(R.id.iv_schedule_athlete_photo);
+        tvAthleteName = findViewById(R.id.tv_schedule_name);
+        tvAtlheteNation = findViewById(R.id.tv_schedule_nation);
+        tvAthleteAbout = findViewById(R.id.tv_schedule_about);
+        tvMatchDate = findViewById(R.id.tv_schedule_date);
+        tvMatchVenue = findViewById(R.id.tv_schedule_venue_name);
+        ivMatchVenue = findViewById(R.id.iv_schedule_venue_photo);
+    }
+
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initViews();
+        getData();
     }
 
     @Override

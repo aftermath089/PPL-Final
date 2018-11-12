@@ -3,6 +3,14 @@ package com.example.aftermath.hifi.schedule;
 import java.io.Serializable;
 
 public class ModelSchedule implements Serializable {
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
     public String getName() {
         return name;
     }
@@ -43,14 +51,15 @@ public class ModelSchedule implements Serializable {
         this.picture = picture;
     }
 
-    private String name, nation, location, time;
+    private String name, nation, location, time, about;
     private int picture;
 
-    public ModelSchedule(String name, String nation, String location, String time, int picture){
+    public ModelSchedule(String name, String nation, String location, String time, int picture, String about){
         this.name=name;
         this.nation=nation;
         this.location=location;
         this.time=time;
         this.picture=picture;
+        this.about=about;
     }
 }
