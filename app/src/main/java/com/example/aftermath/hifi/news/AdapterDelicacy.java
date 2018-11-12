@@ -16,30 +16,30 @@ import com.example.aftermath.hifi.R;
 
 import java.util.ArrayList;
 
-public class AdapterTourismSpot extends RecyclerView.Adapter<AdapterTourismSpot.ViewHolder> {
-    private ArrayList<ModelTourismSpot> modelTourismSpots;
+public class AdapterDelicacy extends RecyclerView.Adapter<AdapterDelicacy.ViewHolder> {
+    private ArrayList<ModelDelicacy> modelDelicacies;
     private Context context;
     private int i;
 
-    public AdapterTourismSpot(ArrayList<ModelTourismSpot> modelTourismSpots, Context context){
-        this.modelTourismSpots=modelTourismSpots;
+    public AdapterDelicacy(ArrayList<ModelDelicacy> modelDelicacies, Context context){
+        this.modelDelicacies=modelDelicacies;
         this.context=context;
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tvHeaderTourismSpot;
-        ImageView ivTourismSpot;
+        TextView tvHeaderDelicacy;
+        ImageView ivDelicacy;
         public ViewHolder(View view){
             super(view);
-            tvHeaderTourismSpot = view.findViewById(R.id.tv_container_news);
-            ivTourismSpot = view.findViewById(R.id.iv_container_news);
+            tvHeaderDelicacy = view.findViewById(R.id.tv_container_news);
+            ivDelicacy = view.findViewById(R.id.iv_container_news);
         }
     }
 
     @NonNull
     @Override
-    public AdapterTourismSpot.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterDelicacy.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         final View view;
         view = layoutInflater.inflate(R.layout.cardview_container_news, parent, false);
@@ -47,13 +47,13 @@ public class AdapterTourismSpot extends RecyclerView.Adapter<AdapterTourismSpot.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterTourismSpot.ViewHolder holder, final int position) {
-        holder.ivTourismSpot.setImageResource(modelTourismSpots.get(position).getTourismSpotPicture());
-        holder.tvHeaderTourismSpot.setText(modelTourismSpots.get(position).getTourismSpotHeader());
+    public void onBindViewHolder(@NonNull AdapterDelicacy.ViewHolder holder, final int position) {
+        holder.ivDelicacy.setImageResource(modelDelicacies.get(position).getDelicacyPicture());
+        holder.tvHeaderDelicacy.setText(modelDelicacies.get(position).getDelicacyHeader());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityNewsContainer.state="TourismSpot";
+                ActivityNewsContainer.state="Delicacies";
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -70,13 +70,13 @@ public class AdapterTourismSpot extends RecyclerView.Adapter<AdapterTourismSpot.
 
     @Override
     public int getItemCount() {
-        return modelTourismSpots.size();
+        return modelDelicacies.size();
     }
 
     private void sendData(int position, Intent intent){
         Bundle bundle = new Bundle();
-        bundle.putSerializable("tSpotData", modelTourismSpots.get(position));
-        bundle.putInt("tSpotPosition",position);
+        bundle.putSerializable("delicaciesData", modelDelicacies.get(position));
+        bundle.putInt("delicaciesPosition",position);
         intent.putExtras(bundle);
         notifyDataSetChanged();
     }

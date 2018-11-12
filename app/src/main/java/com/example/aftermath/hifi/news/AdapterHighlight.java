@@ -2,6 +2,7 @@ package com.example.aftermath.hifi.news;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -57,9 +58,8 @@ public class AdapterHighlight extends RecyclerView.Adapter<AdapterHighlight.View
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent intent = new Intent(context, ActivityNewsContainer.class);
-                        sendData(position, intent);
-                        ActivityNewsContainer.status="update";
+                        //lempar ke youtube]
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(modelHighlights.get(position).getHighlightLink()));
                         context.startActivity(intent);
                     }
                 }, 300);

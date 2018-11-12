@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.aftermath.hifi.R;
@@ -19,9 +20,10 @@ import java.util.ArrayList;
 
 public class FragmentNews extends Fragment {
     public FragmentNews(){}
-    private RecyclerView rvHighlight, rvTourismSpot;
+    private RecyclerView rvHighlight, rvTourismSpot, rvDelicacies;
     private ArrayList<ModelHighlight> listModelHighlight = new ArrayList<>();
     private ArrayList<ModelTourismSpot> listModelTourismSpot = new ArrayList<>();
+    private ArrayList<ModelDelicacy> listModelDelicacy = new ArrayList<>();
 
     @Nullable
     @Override
@@ -29,6 +31,7 @@ public class FragmentNews extends Fragment {
         View view = inflater.inflate(R.layout.fragment_news, container, false);
         rvHighlight = view.findViewById(R.id.rv_highlight);
         rvTourismSpot = view.findViewById(R.id.rv_tourism_spot);
+        rvDelicacies = view.findViewById(R.id.rv_delicacy);
         return view;
     }
 
@@ -41,6 +44,9 @@ public class FragmentNews extends Fragment {
 
             ModelTourismSpot modelTourismSpot = new ModelTourismSpot("MONUMEN NASIONAL", "blablabla blablaabl", R.color.colorPrimary);
             listModelTourismSpot.add(modelTourismSpot);
+
+            ModelDelicacy modelDelicacy = new ModelDelicacy("HEADER MAKANAN", "blablalba",R.color.colorPrimaryDark);
+            listModelDelicacy.add(modelDelicacy);
         }
         //
 
@@ -56,6 +62,12 @@ public class FragmentNews extends Fragment {
         rvTourismSpot.setLayoutManager(layoutManager2);
         rvTourismSpot.setAdapter(new AdapterTourismSpot(listModelTourismSpot,getContext()));
 
+
+        rvDelicacies.setHasFixedSize(false);
+        LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(getContext());
+        linearLayoutManager3.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvDelicacies.setLayoutManager(linearLayoutManager3);
+        rvDelicacies.setAdapter(new AdapterDelicacy(listModelDelicacy, getContext()));
         super.onViewCreated(view, savedInstanceState);
     }
 }
