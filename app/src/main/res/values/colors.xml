@@ -6,4 +6,5 @@
     <color name="textPrimary">#8b2645</color>
     <color name="textWhite">#ffffff</color>
     <color name="textOrange">#FF6700</color>
+    <color name="transparent">#00000000</color>
 </resources>

@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.CardView android:id="@+id/cardview_schedule"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="120dp"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="6dp"
+    android:foreground="@drawable/effect_ripple"
+    card_view:cardCornerRadius="6dp"
+    card_view:cardElevation="2dp"
+    android:clickable="true"
+    android:focusable="true"
+    card_view:cardUseCompatPadding="false"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+    <ImageView
+        android:id="@+id/iv_container_news"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@color/colorPrimary"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tv_container_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE TEXT"
+        android:textColor="@color/textWhite"
+        android:textStyle="bold"
+        card_view:layout_constraintTop_toTopOf="parent"
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        card_view:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="80dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

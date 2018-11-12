@@ -8,7 +8,6 @@
     android:id="@+id/home_schedule"
     >
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="UPCOMING MATCHES"
-        android:textColor="@color/textPrimary"
+        android:textColor="@color/textOrange"
         android:gravity="center_horizontal"
         android:paddingTop="16dp"
         android:paddingBottom="8dp"
