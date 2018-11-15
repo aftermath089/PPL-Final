@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import com.example.aftermath.hifi.R;
 
+
 public class ActivitySchedule extends AppCompatActivity {
     public static String status="";
-
     ModelSchedule modelSchedule;
     ImageView ivAthlete, ivMatchVenue;
     TextView tvAthleteName, tvAtlheteNation, tvAthleteAbout, tvMatchDate, tvMatchVenue;

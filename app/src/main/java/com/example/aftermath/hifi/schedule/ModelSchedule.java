@@ -54,6 +54,7 @@ public class ModelSchedule implements Serializable {
     private String name, nation, location, time, about;
     private int picture;
 
+    
     public ModelSchedule(String name, String nation, String location, String time, int picture, String about){
         this.name=name;
         this.nation=nation;

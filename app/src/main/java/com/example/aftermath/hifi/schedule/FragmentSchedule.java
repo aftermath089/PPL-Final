@@ -12,10 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.aftermath.hifi.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class FragmentSchedule extends Fragment {
+    private DatabaseReference databaseReference;
     public FragmentSchedule(){}
     private RecyclerView rvSchedule;
     private ArrayList<ModelSchedule> listModelSchedule = new ArrayList<>();
@@ -30,6 +33,7 @@ public class FragmentSchedule extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         //test data
         for(int i=0;i<10;i++) {
             ModelSchedule modelSchedule = new ModelSchedule("JOTA THE JETSKI", "INDONESIA", "TENNIS INDOOR SENAYAN", "SELASA, 12 OKTOBER 2099", R.color.colorPrimary, "about player");

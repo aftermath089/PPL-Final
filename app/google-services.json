@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "646154236431",
+    "firebase_url": "https://ppl-project-2ba97.firebaseio.com",
+    "project_id": "ppl-project-2ba97",
+    "storage_bucket": "ppl-project-2ba97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646154236431:android:40dd5a24645ae157",
+        "android_client_info": {
+          "package_name": "com.example.aftermath.hifi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646154236431-632kou7gb32nqcf4oop2i8vb4paq8srm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4EsjdY3VaXddTDnyQ98SEG8aWYU2weD0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
