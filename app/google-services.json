@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "646154236431-tvsaphhh1ai7p9ufnatsgl8agio978e7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aftermath.hifi",
+            "certificate_hash": "22a21d03b8fe6449de7702614c6e239df7b67b2d"
+          }
+        },
+        {
           "client_id": "646154236431-632kou7gb32nqcf4oop2i8vb4paq8srm.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646154236431-632kou7gb32nqcf4oop2i8vb4paq8srm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

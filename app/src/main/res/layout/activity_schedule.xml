@@ -215,7 +215,8 @@
                         android:id="@+id/tv_schedule_about"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:padding="18dp"
+                        android:lineSpacingExtra="4dp"
                         android:text="Sample Text: Gregoria Mariska Tunjung (born 11 August 1999 in Wonogiri, Central Java) is an Indonesian badminton player. She plays women's singles. Her club is PB. Mutiara Cardinal in Bandung, West Java."/>
                 </android.support.v7.widget.CardView>
 

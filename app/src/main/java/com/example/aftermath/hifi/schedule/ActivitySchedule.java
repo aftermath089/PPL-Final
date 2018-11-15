@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import com.example.aftermath.hifi.R;
 
 
 public class ActivitySchedule extends AppCompatActivity {
+    private static final String TAG = "ActivitySchedule";
     public static String status="";
     ModelSchedule modelSchedule;
     ImageView ivAthlete, ivMatchVenue;
@@ -31,6 +33,8 @@ public class ActivitySchedule extends AppCompatActivity {
         tvAthleteAbout.setText(modelSchedule.getAbout());
         tvMatchDate.setText(modelSchedule.getTime());
         tvMatchVenue.setText(modelSchedule.getLocation());
+
+        Log.i(TAG, "get location: "+modelSchedule.getLocation());
     }
 
     private void initViews(){
