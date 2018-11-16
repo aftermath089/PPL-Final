@@ -9,3 +9,4 @@ What does this app do?
 -Athlete can now see their nation's rank
 -Shows nearby Tourism Spot, Traditional Food/Delicacy, etc.
 
+team: baskara, emerald, jota, nendra, vincent
