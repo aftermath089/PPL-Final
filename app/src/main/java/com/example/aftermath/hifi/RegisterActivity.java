@@ -72,6 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                     progressDialog.hide();
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(intent);
+
                     finish();
                     //lempar ke login screen?
                 }else{

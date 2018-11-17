@@ -26,13 +26,14 @@ public class ActivitySchedule extends AppCompatActivity {
     }
 
     private void setLayoutData(){
-        ivAthlete.setImageResource(modelSchedule.getPicture());
-        ivMatchVenue.setImageResource(modelSchedule.getPicture());
+
         tvAthleteName.setText(modelSchedule.getName());
         tvAtlheteNation.setText(modelSchedule.getNation());
         tvAthleteAbout.setText(modelSchedule.getAbout());
         tvMatchDate.setText(modelSchedule.getTime());
         tvMatchVenue.setText(modelSchedule.getLocation());
+        ivAthlete.setImageResource(modelSchedule.getPicture());
+        ivMatchVenue.setImageResource(modelSchedule.getPicture());
 
         Log.i(TAG, "get location: "+modelSchedule.getLocation());
     }
