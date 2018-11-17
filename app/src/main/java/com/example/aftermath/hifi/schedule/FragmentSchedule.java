@@ -32,16 +32,16 @@ public class FragmentSchedule extends Fragment {
     private void showData(DataSnapshot dataSnapshot){
         listModelSchedule.clear();
 
-//        for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
-//            ModelSchedule modelSchedule = new ModelSchedule();
-//            modelSchedule.setName(dataSnapshot1.getValue(ModelSchedule.class).getName());
-//            modelSchedule.setNation(dataSnapshot1.getValue(ModelSchedule.class).getNation());
-//            modelSchedule.setPicture(dataSnapshot1.getValue(ModelSchedule.class).getPicture());
-//            modelSchedule.setTime(dataSnapshot1.getValue(ModelSchedule.class).getTime());
-//            modelSchedule.setLocation(dataSnapshot1.getValue(ModelSchedule.class).getLocation());
-//            modelSchedule.setAbout(dataSnapshot1.getValue(ModelSchedule.class).getAbout());
-//            listModelSchedule.add(modelSchedule);
-//        }
+        for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+            ModelSchedule modelSchedule = new ModelSchedule();
+            modelSchedule.setName(dataSnapshot1.getValue(ModelSchedule.class).getName());
+            modelSchedule.setNation(dataSnapshot1.getValue(ModelSchedule.class).getNation());
+            modelSchedule.setPicture(dataSnapshot1.getValue(ModelSchedule.class).getPicture());
+            modelSchedule.setTime(dataSnapshot1.getValue(ModelSchedule.class).getTime());
+            modelSchedule.setLocation(dataSnapshot1.getValue(ModelSchedule.class).getLocation());
+            modelSchedule.setAbout(dataSnapshot1.getValue(ModelSchedule.class).getAbout());
+            listModelSchedule.add(modelSchedule);
+        }
 
         rvSchedule.setHasFixedSize(false);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
