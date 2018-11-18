@@ -22,7 +22,7 @@
             android:layout_width="136dp"
             android:layout_height="match_parent"
             android:src="@color/colorPrimary"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             />
 
         <LinearLayout

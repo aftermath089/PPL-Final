@@ -1,6 +1,7 @@
 package com.example.aftermath.hifi.schedule;
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.aftermath.hifi.R;
 import com.google.firebase.database.DataSnapshot;
@@ -18,7 +20,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class FragmentSchedule extends Fragment {
@@ -28,6 +35,9 @@ public class FragmentSchedule extends Fragment {
     private RecyclerView rvSchedule;
     private ArrayList<ModelSchedule> listModelSchedule = new ArrayList<>();
 
+
+
+
     private static final String TAG = "Fragment Schedule";
     private void showData(DataSnapshot dataSnapshot){
         listModelSchedule.clear();
@@ -36,6 +46,10 @@ public class FragmentSchedule extends Fragment {
             ModelSchedule modelSchedule = new ModelSchedule();
             modelSchedule.setName(dataSnapshot1.getValue(ModelSchedule.class).getName());
             modelSchedule.setNation(dataSnapshot1.getValue(ModelSchedule.class).getNation());
+
+            modelSchedule.setPictureUrl(dataSnapshot1.getValue(ModelSchedule.class).getPictureUrl());
+            Log.d(TAG, "showData: "+modelSchedule.getNation()+ modelSchedule.getPictureUrl());
+
             modelSchedule.setPicture(dataSnapshot1.getValue(ModelSchedule.class).getPicture());
             modelSchedule.setTime(dataSnapshot1.getValue(ModelSchedule.class).getTime());
             modelSchedule.setLocation(dataSnapshot1.getValue(ModelSchedule.class).getLocation());

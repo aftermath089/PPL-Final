@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.aftermath.hifi.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -59,7 +60,9 @@ public class AdapterSchedule extends RecyclerView.Adapter<AdapterSchedule.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull AdapterSchedule.ViewHolder holder,final int position) {
-        holder.ivAthlete.setImageResource(modelSchedules.get(position).getPicture());
+        Picasso.with(context).load(modelSchedules.get(position).getPictureUrl()).into(holder.ivAthlete);
+
+       // holder.ivAthlete.setImageResource(modelSchedules.get(position).getPicture());
         holder.tvAthleteName.setText(modelSchedules.get(position).getName());
         holder.tvAthleteNation.setText(modelSchedules.get(position).getNation());
         holder.tvVenue.setText(modelSchedules.get(position).getLocation());

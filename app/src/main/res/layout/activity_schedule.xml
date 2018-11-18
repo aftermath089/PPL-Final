@@ -30,7 +30,7 @@
                 android:id="@+id/iv_schedule_athlete_photo"
                 app:layout_collapseMode="parallax"
                 android:src="@color/textOrange"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop "
                 android:layout_width="match_parent"
                 android:layout_height="350dp" />
 

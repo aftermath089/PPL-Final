@@ -54,6 +54,16 @@ public class ModelSchedule implements Serializable {
     private String name, nation, location, time, about;
     private int picture;
 
+    public String getPictureUrl() {
+        return pictureurl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureurl = pictureUrl;
+    }
+
+    private String pictureurl;
+
     public ModelSchedule(){
 
     }
