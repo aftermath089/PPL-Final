@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
     private FirebaseAuth firebaseAuth;
+    private final static String TAG="main";
 
 
     @Override
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -62,6 +66,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View view = navigationView.getHeaderView(0);
+        TextView textView = view.findViewById(R.id.drawer_name);
+        String strings = firebaseAuth.getCurrentUser().getEmail().toString().trim();
+      textView.setText(strings);
 
         if(firebaseAuth.getCurrentUser()==null){
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -70,6 +78,8 @@ public class MainActivity extends AppCompatActivity
         }
 
         FirebaseUser firebaseUser= firebaseAuth.getCurrentUser();
+        String string = firebaseUser.getEmail();
+        Log.d(TAG, "EMAIL"+string);
 
     }
 
